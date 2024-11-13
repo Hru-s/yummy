@@ -1,10 +1,10 @@
-package com.example.art;
+package com.prashantjain.esdtestingprogram;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class YummyApplicationTests {
+class EsdTestingProgramApplicationTests {
 
 	@Test
 	void contextLoads() {

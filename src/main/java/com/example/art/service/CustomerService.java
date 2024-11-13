@@ -2,20 +2,23 @@ package com.example.art.service;
 
 import com.example.art.dto.CustomerRequest;
 import com.example.art.dto.CustomerResponse;
+import com.example.art.dto.LoginRequest;
 import com.example.art.entity.Customer;
+import com.example.art.exception.CustomerNotFoundException;
+import com.example.art.helper.EncryptionService;
+import com.example.art.helper.JWTHelper;
 import com.example.art.mapper.CustomerMapper;
 import com.example.art.repo.CustomerRepo;
-import jakarta.validation.Valid;
-import lombok.*;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.UUID;
 
 import static java.lang.String.format;
 
 @Service
 @RequiredArgsConstructor
 public class CustomerService {
-
     private final CustomerRepo customerRepo;
     private final CustomerMapper customerMapper;
     private final EncryptionService encryptionService;
@@ -48,4 +51,3 @@ public class CustomerService {
         return jwtHelper.generateToken(request.email());
     }
 }
-
