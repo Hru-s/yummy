@@ -32,3 +32,4 @@ public class Customer {
     @Column(name = "access_token", unique = true)
     private String accessToken;
 }
+

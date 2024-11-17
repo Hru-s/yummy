@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/v1/customers")
+//@RequestMapping("api")
 @RequiredArgsConstructor
 public class CustomerController {
 
@@ -19,6 +19,10 @@ public class CustomerController {
     @GetMapping("/{email}")
     public ResponseEntity<CustomerResponse> getCustomer(@PathVariable("email") String email) {
         return ResponseEntity.ok(customerService.retrieveCustomer(email));
+    }
+    @GetMapping("/yo")
+    public String getstomer() {
+        return "hello im working";
     }
 
     @PostMapping
